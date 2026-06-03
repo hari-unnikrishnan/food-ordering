@@ -1,0 +1,655 @@
+
+/* IMPORTANT:
+   Do NOT use global selectors in this stylesheet.
+   Scope layout resets to the POS dashboard only to avoid affecting other pages (e.g. RestaurantLogin).
+*/
+.dashboard-container {
+  /* min-height: 100vh; */
+  height: calc(100vh - 70px);
+  background: linear-gradient(to bottom right, #f6e7b2, #eef7f7);
+  padding: 0px;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Ensure right panel content doesn't get pushed off-screen */
+/* .order-panel {
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+} */
+
+
+.dashboard-box {
+  background: white;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 220px 1fr 320px;
+  gap: 20px;
+  padding: 35px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-card {
+  background: #f4f4f4;
+  padding: 18px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.category-card.active {
+  background: #f8c537;
+}
+
+.category-card h3 {
+  font-size: 16px;
+}
+
+.category-card p {
+  margin-top: 5px;
+  color: gray;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  background: #f3f3f3;
+  border-radius: 15px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  z-index: 100;
+}
+
+.search-item {
+  padding: 14px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #111827;
+  transition: 0.2s;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.search-item:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.food-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.food-image-box {
+  position: relative;
+}
+
+.food-image-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.food-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.food-tag.available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+
+.food-tag.unavailable {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+
+.food-tag.special {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+}
+
+
+
+.food-content {
+  padding: 15px;
+}
+
+.food-content p {
+  color: gray;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.food-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+
+.qty-box button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.plus-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: teal !important;
+  color: white;
+}
+
+.order-panel {
+  background: #fafafa;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+/* PAYMENT / SCAN UI */
+.payment-method-row{
+  margin-top: 8px;
+}
+
+.payment-bar{
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  margin: 12px 0;
+  position: relative;
+}
+
+.payment-bar::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  width: 55%;
+  border-radius: 999px;
+  background: #16a34a;
+}
+
+.scan-row{
+  align-items: flex-start;
+
+}
+
+.scan-box{
+  background: #5f5fff8a;
+  color: #111827;
+  border-radius: 16px;
+  padding: 12px;
+  min-width: 280px;
+  margin-top: 10px;
+}
+
+.qr-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin: 8px 0;
+}
+
+.qr-canvas{
+  width: 160px;
+  height: 160px;
+  display: flex;
+}
+
+.qr-actions{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top:10px;
+}
+
+.qr-action-btn{
+  border:none;
+  background:#5f5fff;
+  color:#fff;
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:13px;
+}
+
+.qr-action-btn:hover{
+  filter:brightness(0.95);
+}
+
+
+.scan-placeholder{ 
+  color: #9ca3af;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.scan-code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 6px;
+  margin-left: 72px;
+  word-break: break-word;
+  white-space: pre-line; /* preserve \n from paymentScanText */
+}
+
+
+
+.scan-wrapper{display:flex;justify-content:center;}
+
+.qr-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin: 8px 0;
+}
+
+.qr-canvas{
+  width: 160px;
+  height: 160px;
+}
+
+.scan-amount{
+  margin-top: 6px;
+  font-weight: 700;
+  color: #111827;
+ 
+}
+
+.payment-confirm-row{
+  margin-top: 8px;
+}
+
+.payment-status-text{
+  font-weight: 700;
+  color: #16a34a;
+}
+
+
+.payment-status-pending{
+  color: #16a34a;
+  cursor: pointer;
+}
+
+/* better keyboard focus for the clickable payment status */
+.payment-status-text:focus{
+  outline: 2px solid rgba(22,163,74,0.6);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.payment-status-complete{
+  color: #0ea5e9;
+}
+
+/* space above the payment completion text to visually separate it from the QR */
+.payment-confirm-row{
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(14, 165, 233, 0.35);
+}
+
+/* ORDER HISTORY */
+.order-history-container{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-history-header{
+  /* display:flex; */
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 6px 0;
+}
+
+.order-history-title-box{
+  display:flex;
+  align-items: baseline;
+  gap: 10px;
+  cursor: pointer;
+}
+.order-history-title-box{
+  margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.order-history-title-box h2{
+  font-size: 18px;
+}
+
+.order-history-title-box:focus{
+  outline: 2px solid rgba(95,95,255,0.35);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.history-view-all{
+  color: #5f5fff;
+  font-weight: 800;
+  font-size: 13px;
+  margin-left: 72px;
+}
+
+
+.order-history-loading,
+.order-history-empty{
+  padding: 10px;
+  color: #6b7280;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.order-history-card{
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.history-row{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.history-row span:first-child{
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.history-row span:last-child{
+  color: #000000;
+  font-size: 13px;
+  font-weight: 800;
+}
+.payment-status-pendings{
+
+    background: #f8c537;
+    width: 70%;
+    border: none;
+    padding: 8px;
+    border-radius: 18px;
+    margin-top: 0px;
+  }
+
+.view-details-btn{
+  width: 100%;
+  border: none;
+  background: #5f5fff;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.view-details-btn:hover{
+  filter: brightness(0.96);
+}
+
+.payment-status-pending{
+  color: #16a34a;
+}
+
+.payment-loading{
+  margin-top: 10px;
+  color: orange;
+  font-weight: bold;
+}
+
+.payment-success{
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+
+
+.profile-box {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.profile-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logout-btn{
+  width:33px;
+  height:33px;
+  border:none;
+  border-radius:16px;
+   background: linear-gradient(to bottom right, #f6e7b2, #eef7f7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:
+    0 10px 24px rgba(239,68,68,0.22);
+  transition:0.3s ease;
+  color: #000000;
+   border:1px solid #f8c537;
+}
+
+.logout-btn:hover{
+  transform:translateY(-2px) scale(1.04);
+}
+
+.logout-icon-img{
+  width:24px;
+  height:24px;
+  object-fit:contain;
+  filter:brightness(0) invert(0);
+   color: #000000;
+}
+
+.profile-logo{
+  width:41px;
+  height:41px;
+  border-radius:18px;
+  background:
+    linear-gradient(135deg,#f97316,#ea580c);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:18px;
+  box-shadow:
+    0 12px 28px rgba(249,115,22,0.25);
+}
+
+
+.order-list {
+  margin-top: 20px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.order-item p {
+  color: gray;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.checkout-box {
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.checkout-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  
+}
+
+ .checkout-btn {
+  width: 100%;
+  border: none;
+  background: #f8c537;
+  padding: 15px;
+  border-radius: 18px;
+  margin-top: 0px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.payment-method-row {
+   margin-bottom: 2px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(14, 165, 233, 0.35);
+}
+
+
+
+@media(max-width: 1200px) {
+  .dashboard-box {
+    grid-template-columns: 1fr;
+  }
+
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+@media(max-width: 768px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-category-btn{
+  padding: 18px;
+    border-radius: 18px;
+    background: #5f5fff;
+    color: white;
+    cursor: pointer;
+}

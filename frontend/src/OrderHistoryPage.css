@@ -1,0 +1,99 @@
+.order-history-page-header{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:26px;
+  background:#ffffff;
+  border-radius:12px;
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
+  margin-bottom:13px;
+  flex-wrap:wrap;
+}
+
+.order-history-page-title{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.order-history-page-title h2{
+  margin:0;
+  font-size:28px;
+  font-weight:700;
+  color:#111827;
+}
+
+.order-history-page-count{
+  font-size:15px;
+  font-weight:500;
+  color:#2e2f31;
+}
+
+.order-history-back-btn{
+  border:none;
+  background:#a18e57b4;
+  color:#111827;
+  padding:12px 18px;
+  border-radius:16px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+  box-shadow:0 4px 10px rgba(248,197,55,0.35);
+}
+
+.order-history-back-btn:hover{
+  transform:translateY(-2px);
+  opacity:0.95;
+}
+
+.order-history-back-btn:active{
+  transform:scale(0.98);
+}
+
+.payment-info{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.payment-method{
+  background:#f3f4f6;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+
+/* TABLET */
+@media (max-width:768px){
+
+  .order-history-page-header{
+    padding:18px;
+    border-radius:20px;
+  }
+
+  .order-history-page-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    padding:16px;
+  }
+
+  .order-history-page-title h2{
+    font-size:22px;
+  }
+
+  .order-history-page-count{
+    font-size:14px;
+  }
+
+  .order-history-back-btn{
+    width:100%;
+    padding:14px;
+    border-radius:14px;
+    font-size:14px;
+  }
+}

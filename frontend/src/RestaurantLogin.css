@@ -1,0 +1,274 @@
+.fresh-login-page{
+  min-height:100vh;
+  display:flex;
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+  background:#f3ad43;
+}
+
+/* LEFT */
+.fresh-side-left{
+  width:38%;
+  position:relative;
+  background:#f3ad43;
+  overflow:hidden;
+}
+
+.fresh-side-left::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("https://www.transparenttextures.com/patterns/food.png");
+  opacity:0.15;
+}
+
+.fresh-dark-panel{
+  position:absolute;
+  top:0;
+  left:90px;
+  width:150px;
+  height:100%;
+  background:rgba(0,0,0,0.82);
+}
+
+.fresh-brand-logo{
+  position:absolute;
+  top:18px;
+  left:40px;
+  color:white;
+  font-size:22px;
+  font-weight:700;
+  text-align:center;
+}
+
+.fresh-brand-logo span{
+  display:block;
+  font-size:12px;
+  font-weight:400;
+}
+
+.fresh-food{
+  position:absolute;
+  background-size:cover;
+  background-position:center;
+  border-radius:50%;
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.28);
+}
+
+.fresh-food-large{
+  top:40px;
+  left:30px;
+  width:260px;
+  height:260px;
+  background-image:
+    url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop");
+}
+
+.fresh-food-medium{
+  top:310px;
+  left:95px;
+  width:180px;
+  height:180px;
+  border:8px solid white;
+  background-image:
+    url("https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop");
+}
+
+.fresh-food-small{
+  bottom:50px;
+  left:20px;
+  width:140px;
+  height:140px;
+  border:8px solid white;
+  background-image:
+    url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop");
+}
+
+/* RIGHT */
+.fresh-side-right{
+  width:62%;
+  background:#f6f2e8;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.fresh-wave-shape{
+  position:absolute;
+  top:-120px;
+  left:-200px;
+  width:520px;
+  height:140%;
+  background:#f3ad43;
+  border-top-right-radius:50%;
+  border-bottom-right-radius:50%;
+}
+
+.fresh-auth-box{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:360px;
+}
+
+.fresh-auth-box h1{
+  text-align:center;
+  font-size:40px;
+  font-weight:800;
+  color:#111827;
+  margin-bottom:12px;
+}
+
+.fresh-auth-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.fresh-auth-form input{
+  height:54px;
+  border:none;
+  outline:none;
+  border-radius:16px;
+  background:#ececec;
+  padding:0 18px;
+  margin-bottom:18px;
+  font-size:15px;
+}
+
+.fresh-password-wrap{
+  position:relative;
+  margin-bottom:18px;
+}
+
+.fresh-password-wrap input{
+  margin-bottom:0;
+  padding-right:56px;
+}
+
+.fresh-password-eye{
+  position:absolute;
+  top:50%;
+  right:14px;
+  transform:translateY(-50%);
+  height:36px;
+  width:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  font-size:18px;
+  color:#6b7280;
+}
+
+
+.fresh-forgot-link{
+  text-align:right;
+  color:#84cc16;
+  font-size:13px;
+  margin-bottom:24px;
+  cursor:pointer;
+}
+
+.fresh-auth-form button{
+  width:120px;
+  height:53px;
+  margin:0 auto;
+  border:none;
+  border-radius:12px;
+  background:#ececec;
+  color:rgb(0, 0, 0);
+  font-weight:700;
+  cursor:pointer;
+}
+
+
+.fresh-divider{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:40px 0 28px;
+  color:#9ca3af;
+  font-size:14px;
+}
+
+.fresh-divider span{
+  flex:1;
+  height:1px;
+  background:#d1d5db;
+}
+
+.fresh-social-buttons{
+ display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.social-icon {
+  width: 24px;
+  height:24px;
+  margin-bottom:-10px;
+  
+  
+}
+.social-iconz{
+  width:34px;
+  height:34px;
+  margin-bottom:-10px;
+}
+
+
+.fresh-social-buttons button{
+  flex:1;
+  height:52px;
+  border-radius:999px;
+  border:1px solid #d1d5db;
+  background:white;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.fresh-register-text{
+  margin-top:28px;
+  text-align:center;
+  color:#6b7280;
+  font-size:14px;
+}
+
+.fresh-register-text a{
+  margin-left:6px;
+  color:#84cc16;
+  font-weight:700;
+  text-decoration:none;
+}
+
+@media(max-width:900px){
+
+  .fresh-login-page{
+    flex-direction:column;
+  }
+
+  .fresh-side-left{
+    display:none;
+  }
+
+  .fresh-side-right{
+    width:100%;
+    min-height:100vh;
+    padding:40px 20px;
+  }
+
+  .fresh-wave-shape{
+    display:none;
+  }
+
+}
+
+
+.subheading{
+  margin-bottom: 40px;
+}

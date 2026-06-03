@@ -1,0 +1,76 @@
+cd "e:/od ordering dashboard/frontend" ; npm run dev 
+
+
+
+
+
+
+python backend/manage.py runserver 8000
+
+cd "E:\od ordering dashboard\backend"
+python manage.py runserver 8000
+
+
+
+http://127.0.0.1:8000/admin/login/?next=/admin/
+
+usename:admin1
+password:admin123
+
+
+____________________________________________________________________
+
+payments for adding
+_____________________________________________________________
+
+<div className="checkout-row payment-method-row">
+              <span>Pay by</span>
+              <span>
+                <select
+                  value={paymentMethod}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                  style={{ padding: 8, borderRadius: 8 }}
+                >
+                  <option value="UPI">UPI ID</option>
+                  <option value="GPay">GPay</option>
+                  <option value="Card">Card</option>
+                </select>
+              </span>
+            </div>
+
+
+
+
+ {paymentMethod !== "Card" ? (
+              <div className="checkout-row">
+                <span>{paymentMethod === "UPI" ? "UPI ID" : "GPay ID"}</span>
+                <span>
+                  <input
+                    value={upiId}
+                    onChange={(e) => setUpiId(e.target.value)}
+                    placeholder="name@bank"
+                    style={{ padding: 8, borderRadius: 8, width: 220 }}
+                  />
+                </span>
+              </div>
+            ) : (
+              <div className="checkout-row">
+                <span>Card Number</span>
+                <span>
+                  <input
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                    placeholder="1234 5678 9012 3456"
+                    style={{ padding: 8, borderRadius: 8, width: 220 }}
+                  />
+                </span>
+              </div>
+            )}
+
+
+
+
+ <div className="fresh-social-buttons">
+            <button type="button" img src={google} alt="google" className="social-icon" >Google</button>
+            <button type="button" img src={apple} alt="apple" className="social-icon" >Facebook</button>
+          </div>

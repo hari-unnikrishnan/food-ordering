@@ -1,0 +1,113 @@
+.statusbar-wrap {
+  margin-top: 12px;
+}
+
+.statusbar {
+  position: relative;
+  padding: 6px 0 0;
+}
+
+.statusbar-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18px;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.statusbar-fill {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  height: 8px;
+  border-radius: 999px;
+  background: #16a34a;
+  transition: width 0.4s ease;
+}
+
+.statusbar-steps {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.statusbar-step {
+  flex: 1;
+  text-align: center;
+}
+
+.statusbar-step .dot {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  background: white;
+  position: relative;
+  top: 10px;
+}
+
+.statusbar-step .label {
+  display: block;
+  margin-top: 18px;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.statusbar-step.active .dot {
+  border-color: #16a34a;
+  background: #16a34a;
+}
+
+.statusbar-step.active .label {
+  color: #16a34a;
+}
+.tracking-box{
+  margin-top: 15px;
+  padding: 16px;
+  background: #f4f4f4;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tracking-title{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+.tracking-text{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.tracking-status{
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+.status-delivered{
+  background: #16a34a;
+}
+
+.status-preparing{
+  background: #f59e0b;
+}
+
+.status-pending{
+  background: #3b82f6;
+}
